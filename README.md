@@ -1,36 +1,100 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# My Next.js Template
 
-## Getting Started
+Esta es una plantilla para proyectos de Next.js con NextAuth, Prisma, Shadcn UI, Zod y Zustand pre-configurados. Este proyecto base está diseñado para ayudarte a iniciar rápidamente con las mejores prácticas y las últimas versiones de estas tecnologías.
 
-First, run the development server:
+## Características
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+- **Next.js**: Un framework de React que permite la generación estática y renderizado del lado del servidor, con soporte incorporado para TypeScript y CSS/SCSS.
+- **TypeScript**: Un superconjunto de JavaScript que añade tipado estático al lenguaje.
+- **NextAuth**: Una solución completa de autenticación para Next.js.
+- **Prisma**: Un ORM moderno que simplifica la interacción con bases de datos.
+- **Shadcn UI**: Una biblioteca de componentes UI originalmente diseñada para web.
+- **Zod**: Una biblioteca para validación de esquemas que permite definir y validar datos.
+- **Zustand**: Un gestor de estado pequeño, rápido y escalable para React.
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Instalación
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+Para usar esta plantilla, sigue estos pasos:
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+1. **Clona el repositorio**:
 
-## Learn More
+   ```bash
+   git clone https://github.com/tu-usuario/my-nextjs-template.git
+   cd my-nextjs-template
+   ```
 
-To learn more about Next.js, take a look at the following resources:
+2. **Instala las dependencias**:
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+   ```bash
+   npm install
+   ```
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+3. **Configura las variables de entorno**:
 
-## Deploy on Vercel
+   Crea un archivo `.env` en la raíz del proyecto basado en `.env.example` y llena las variables necesarias:
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+   ```plaintext
+   DATABASE_URL=postgresql://user:password@localhost:5432/mydb
+   AUTH_SECRET=""
+   AUTH_GOOGLE_ID={CLIENT_ID}
+   AUTH_GOOGLE_SECRET={CLIENT_SECRET}
+   ```
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+4. **Configura Prisma**:
+
+   Ajusta el archivo `prisma/schema.prisma` según tus necesidades y ejecuta las migraciones:
+
+   ```bash
+   npx prisma migrate dev
+   ```
+
+5. **Ejecuta el proyecto**:
+
+   ```bash
+   npm run dev
+   ```
+
+## Uso
+
+Esta plantilla está preconfigurada con las siguientes tecnologías:
+
+### Next.js
+
+Next.js es un framework de React que permite la generación estática y renderizado del lado del servidor. Está configurado con TypeScript para añadir tipado estático al lenguaje.
+
+### NextAuth
+
+NextAuth es una solución completa de autenticación para Next.js. La configuración básica está en `pages/api/auth/[...nextauth].ts`.
+
+### Prisma
+
+Prisma es un ORM moderno que simplifica la interacción con bases de datos. El archivo de configuración principal es `prisma/schema.prisma`.
+
+### Shadcn UI
+
+Shadcn UI es una biblioteca de componentes UI. La configuración del proveedor de tema está en `pages/_app.tsx`.
+
+### Zod
+
+Zod se usa para validar datos en tus controladores o donde lo necesites. Es fácil de usar y tiene una sintaxis intuitiva.
+
+### Zustand
+
+Zustand es un gestor de estado pequeño, rápido y escalable para React. Un ejemplo básico de uso está en `store.ts`.
+
+## Scripts Disponibles
+
+En el directorio del proyecto, puedes ejecutar:
+
+- `npm run dev`: Inicia el servidor de desarrollo.
+- `npm run build`: Construye la aplicación para producción.
+- `npm run start`: Inicia la aplicación en modo de producción.
+- `npm run lint`: Analiza el código en busca de errores y problemas de estilo.
+
+## Contribuyendo
+
+Si deseas contribuir a este proyecto, por favor, crea una bifurcación (fork) del repositorio y envía una solicitud de extracción (pull request).
+
+## Licencia
+
+Este proyecto está bajo la licencia MIT. Consulta el archivo `LICENSE` para más detalles.
